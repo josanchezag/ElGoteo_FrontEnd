@@ -11,6 +11,10 @@ import { CreditComponent } from './components/credit/credit.component';
 import { ErrorComponent } from './components/error/error.component';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatIconModule } from "@angular/material/icon";
+import { MatMenuModule} from '@angular/material/menu';
+import { MatSidenavModule} from '@angular/material/sidenav';
+import { PaymentsComponent } from './components/payments/payments.component';
+
 
 
 @NgModule({
@@ -19,14 +23,17 @@ import { MatIconModule } from "@angular/material/icon";
     SingInComponent,
     ClientComponent,
     CreditComponent,
-    ErrorComponent
+    ErrorComponent,
+    PaymentsComponent
   ],
   imports: [
     BrowserModule,
     routing,
     BrowserAnimationsModule,
     MatIconModule,
-    MatToolbarModule
+    MatToolbarModule,
+    MatMenuModule,
+    MatSidenavModule
   ],
   providers: [],
   bootstrap: [AppComponent]

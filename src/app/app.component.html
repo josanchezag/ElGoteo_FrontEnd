@@ -1,56 +1,33 @@
 <div id="containerPpal">
   <span id="header">
       <div id="botonera">
-        <div>
           <mat-toolbar color="primary">
-            <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
-              <mat-icon>menu</mat-icon>
+            <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
+              <mat-icon>more_vert</mat-icon>
             </button>
-            <span>My App</span>
-            <span class="example-spacer"></span>
-            <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
-              <mat-icon>favorite</mat-icon>
-            </button>
-            <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
-              <mat-icon>share</mat-icon>
-            </button>
+            <mat-menu #menu="matMenu">
+              <button mat-menu-item>
+                <span>
+                  <a [routerLink]="['/Client']" [routerLinkActive]="['actived']">
+                    Clientes              
+                  </a>
+                </span>
+              </button>
+              <button mat-menu-item>
+                <span>
+                  <a [routerLink]="['/Credit']" [routerLinkActive]="['actived']">
+                    Creditos              
+                  </a></span>
+              </button>
+              <button mat-menu-item>
+                <span>
+                  <a [routerLink]="['/Payment']" [routerLinkActive]="['actived']">
+                    Pagos              
+                  </a></span>
+              </button>
+            </mat-menu>            
+            <div id="btn_tittle">El Goteo</div>
           </mat-toolbar>
-        </div>
-        <ul>
-          <li id="logo"><a [routerLink]="['']">
-  
-            <div class="example-button-row">
-            <button mat-icon-button color="primary" aria-label="Example icon button with a home icon">
-              <mat-icon [ngStyle]="{'color':'white'}" >home</mat-icon>
-            </button>
-            </div>
-          </a></li>
-          <li>
-            <a [routerLink]="['/represas']" [routerLinkActive]="['actived']">
-              Represas              
-            </a>
-          </li>
-          <li>
-            <a [routerLink]="['/servicios']" [routerLinkActive]="['actived']">
-              Servicios
-            </a>
-          </li>
-          <li>
-            <a [routerLink]="['/galeria']" [routerLinkActive]="['actived']">
-              Galeria
-            </a>
-          </li>
-          <li>
-            <a [routerLink]="['/nuestro-equipo']" [routerLinkActive]="['actived']">
-              Nuestro Equipo
-            </a>
-          </li>
-          <li>
-            <a [routerLink]="['/contactenos']" [routerLinkActive]="['actived']">
-              Contactenos
-            </a>
-          </li>
-        </ul>
       </div>
     </span>
     <div id="manejador">
@@ -58,5 +35,5 @@
         <router-outlet></router-outlet>
       </section>
     </div>
-    <footer id="">Copy Right JSA</footer>
+    <footer class="footer">Copy Right JSA</footer>
 </div>
