@@ -7,23 +7,19 @@
             </button>
             <mat-menu #menu="matMenu">
               <button mat-menu-item>
-                <span>
-                  <a [routerLink]="['/Client']" [routerLinkActive]="['actived']">
+                <a [routerLink]="['/Client']" [routerLinkActive]="['activebutton']">
                     Clientes              
-                  </a>
-                </span>
+                 </a>
               </button>
               <button mat-menu-item>
-                <span>
-                  <a [routerLink]="['/Credit']" [routerLinkActive]="['actived']">
+                <a [routerLink]="['/Credit']" [routerLinkActive]="['activebutton']">
                     Creditos              
-                  </a></span>
+                </a>
               </button>
               <button mat-menu-item>
-                <span>
-                  <a [routerLink]="['/Payment']" [routerLinkActive]="['actived']">
+                <a [routerLink]="['/Payment']" [routerLinkActive]="['activebutton']">
                     Pagos              
-                  </a></span>
+                </a>
               </button>
             </mat-menu>            
             <div id="btn_tittle">El Goteo</div>

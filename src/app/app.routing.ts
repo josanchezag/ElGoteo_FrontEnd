@@ -12,6 +12,7 @@ const appRoutes: Routes=[
   {path: 'Client', component: ClientComponent},
   {path: 'Credit', component: CreditComponent},
   {path: 'Payment', component: PaymentsComponent},
+  {path: 'login', component: SingInComponent},
   {path: '**', component: SingInComponent}
 ];
 
