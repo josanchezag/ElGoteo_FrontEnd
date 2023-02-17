@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthenticationService } from './service/authentication.service';
 
 @Component({
   selector: 'app-root',
@@ -6,13 +7,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
-  token='' ;
   title = 'ElGoteo';
 
-  ngOnInit(){
-    if(this.token=='')
-    {
-      console.log('Token Vacio');
-    }
+  constructor(private authenticationService:AuthenticationService){
+    
   }
+
+  ngOnInit(){
+  }
+
+  
 }
