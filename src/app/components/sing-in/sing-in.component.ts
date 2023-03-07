@@ -1,7 +1,7 @@
 import { Input, Component, Output, EventEmitter } from '@angular/core';
-import { FormGroup, FormControl, FormBuilder } from '@angular/forms';
+import { FormGroup, FormControl, FormBuilder, Validators } from '@angular/forms';
 import { AuthenticationService } from './../../service/authentication.service';
-import { Observable } from 'rxjs';
+import { Observable, tap } from 'rxjs';
 
 @Component({
   selector: 'app-sing-in',
@@ -10,7 +10,7 @@ import { Observable } from 'rxjs';
 })
 export class SingInComponent {
   private token:string='';
-  form: FormGroup = new FormGroup({
+  formSingIn: FormGroup = new FormGroup({
     username: new FormControl(''),
     password: new FormControl(''),
   });
@@ -19,23 +19,44 @@ export class SingInComponent {
 
   }
   ngOnInit():void{
-    this.form=this.formBuilder.group({
-      userName:[],
-      password:[]
+    this.formSingIn=this.formBuilder.group({
+      userName:['',
+      [
+        Validators.required
+      ]
+    ],
+      password:['',
+      [
+        Validators.required,
+        Validators.minLength(8)
+      ]
+    ]
     });
   }
 
   public authentication():Observable<any>{
     let body={
-      userName:this.form.value.userName,
-      password:this.form.value.password
+      userName:this.formSingIn.value.userName,
+      password:this.formSingIn.value.password
     }
     this.authenticationService.auth('http://localhost:8090/login',body)
-    .subscribe(respuesta =>{
-      this.token=respuesta.toString();
-      console.log(respuesta);
-    })
+    .subscribe(
+      article => {
+        console.log(article);
+        console.log(article.headers.get('Authorization'));
+      },
+      err => {
+        console.log(err);
+      })
+    
     return new Observable();
+  }
+
+  public isPresentToken():boolean{
+    if(this.token.trim()===''|| this.token===null){
+      return false;
+    }
+    return true;
   }
   
   @Input() error: string | null | undefined;

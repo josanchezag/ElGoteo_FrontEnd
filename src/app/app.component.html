@@ -1,35 +1,29 @@
 <div id="containerPpal">
   <span id="header">
-      <div id="botonera">
-          <mat-toolbar color="primary">
-            <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
-              <mat-icon>more_vert</mat-icon>
-            </button>
-            <mat-menu #menu="matMenu">
-              <button mat-menu-item>
-                <a [routerLink]="['/Client']" [routerLinkActive]="['activebutton']">
-                    Clientes              
-                 </a>
-              </button>
-              <button mat-menu-item>
-                <a [routerLink]="['/Credit']" [routerLinkActive]="['activebutton']">
-                    Creditos              
-                </a>
-              </button>
-              <button mat-menu-item>
-                <a [routerLink]="['/Payment']" [routerLinkActive]="['activebutton']">
-                    Pagos              
-                </a>
-              </button>
-            </mat-menu>            
-            <div id="btn_tittle">El Goteo</div>
-          </mat-toolbar>
-      </div>
-    </span>
-    <div id="manejador">
-      <section id="content">
-        <router-outlet></router-outlet>
-      </section>
+    <div id="botonera">
+      <mat-toolbar color="primary">
+        <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
+          <mat-icon>more_vert</mat-icon>
+        </button>
+        <mat-menu #menu="matMenu">
+          <a [routerLink]="['/Client']" [routerLinkActive]="['activebutton']">
+            <button mat-menu-item>Clientes</button>
+          </a>
+          <a [routerLink]="['/Credit']" [routerLinkActive]="['activebutton']">
+            <button mat-menu-item>Creditos</button>
+          </a>
+          <a [routerLink]="['/Payment']" [routerLinkActive]="['activebutton']">
+            <button mat-menu-item>Pagos</button>
+          </a>
+        </mat-menu>
+        <div class="btn_tittle">El Goteo</div>
+      </mat-toolbar>
     </div>
-    <footer class="footer">Copy Right JSA</footer>
+  </span>
+  <div id="manejador">
+    <section id="content">
+      <router-outlet></router-outlet>
+    </section>
+  </div>
+  <footer class="footer">Copy Right JSA</footer>
 </div>

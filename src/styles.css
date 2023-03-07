@@ -1,4 +1,15 @@
 /* You can add global styles to this file, and also import other style files */
 
 html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+body { margin: 1px; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.mat-mdc-menu-content{
+    background:rgb(229, 229, 233);
+    padding: 1px;
+  }
+  .mat-mdc-menu-item{
+    padding: 1px;
+  }
+  .mat-mdc-menu-item:hover{
+    border: #a7a7ac 1px solid;
+  }
